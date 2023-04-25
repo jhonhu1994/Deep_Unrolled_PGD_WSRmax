@@ -46,7 +46,7 @@ where $\mathbf{A}=\sum_{k}{\mu_ k\lvert\beta_ k\rvert^2\mathbf{h}_ k\mathbf{h}_ 
 
 $$\mathbf{V}^{t+1}=\Pi_ {\mathcal{C}}\left(\mathbf{V}^t-\gamma\left[\mathbf{A}\mathbf{V}^t-\mathbf{B}\right]\right),\tag{6}$$
 
-where $\Pi_ \mathcal{C}(\mathbf{V})=\frac{\sqrt{P}\mathbf{V}}{\mathrm{ReLU}(\lVert\mathbf{V})\rVert-\sqrt{P})+\sqrt{P}}$ denotes the projected operator. The intuition is that (6) can be interpreted as a a network layer, in which $\mathbf{A}$ refers to the 'weights', $\mathbf{B}$ refers to  the 'bias', and the projected operator $\Pi_ {\mathcal{C}}$ represents the 'nonlinear activation function'. As a result, the PGD algorithm applied to the WSRMax problem can be implemented using a deep network, as illustrated in Fig. 1.
+where $\Pi_ \mathcal{C}(\mathbf{V})=\frac{\sqrt{P}\mathbf{V}}{\mathrm{ReLU}(\lVert\mathbf{V})\rVert-\sqrt{P})+\sqrt{P}}$ denotes the projected operator. The intuition is that (6) can be interpreted as a a network layer, in which $\mathbf{A}$ refers to the 'weights', $\mathbf{B}$ refers to  the 'bias', and the projected operator $\Pi_ {\mathcal{C}}$ acts as the 'nonlinear activation function'. As a result, the PGD algorithm applied to the WSRMax problem can be implemented using a deep network, as illustrated in Fig. 1.
 
 ![unrolled PGD for WSRmax precoding](/Unrolled_PGD_WSRmax.png)
 
