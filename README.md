@@ -30,9 +30,7 @@ The WSRMax problem (4) is known to be NP-hard. Currently,  the iterative weighte
 
 3. Update the precoding matrix:
 
-   $$
-   \mathbf{V}\leftarrow\arg\min_ {\mathbf{V}}\\;\mathrm{tr}(\mathbf{V}^\mathrm{H}\mathbf{A}\mathbf{V}-\mathbf{V}^\mathrm{H}\mathbf{B}-\mathbf{B}^\mathrm{H}\mathbf{V}),\quad\mathrm{s.t.}\\;\mathrm{tr}(\mathbf{V}\mathbf{V}^\mathrm{H})\leq P,\tag{5}
-   $$
+   $$\mathbf{V}\leftarrow\arg\min_ {\mathbf{V}}\\;\mathrm{tr}(\mathbf{V}^\mathrm{H}\mathbf{A}\mathbf{V}-\mathbf{V}^\mathrm{H}\mathbf{B}-\mathbf{B}^\mathrm{H}\mathbf{V}),\quad\mathrm{s.t.}\\;\mathrm{tr}(\mathbf{V}\mathbf{V}^\mathrm{H})\leq P,\tag{5}$$
    
    where $\mathbf{A}=\sum_ {k=1}^K{\mu_ k\lvert\beta_ k\rvert^2\mathbf{h}_ k\mathbf{h}_ k^\mathrm{H}}$, and $\mathbf{B}=[\mathbf{b}_ 1,\cdots,\mathbf{b}_ k,\cdots,\mathbf{b}_ K]$ with $\mathbf{b}_ k=\mu_ k\beta_ k\mathbf{h}_ k$. Problem (5) is a convex quadratically constrained quadratic programming (QCQP) problem and thus can be easily solved (e.g., by using Lagrange dual method).
 
@@ -41,13 +39,13 @@ The WSRMax problem (4) is known to be NP-hard. Currently,  the iterative weighte
 We propose the novel application of **deep unfolding** [[2]](#L2O_Chen) to the WSRmax problem. The idea is to map each iteration of a **projected gradient descent (PGD) algorithm** for solving (4) to a network layer and thereby obtain a network architecture called **deep unrolled PGD**, in which the iterative parameter is modeled as learnable structures.
 
 Specifically, the WSR objective has a gradient with respect to $\mathbf{V}$ as
-$$
-\nabla f(\mathbf{V})=\mathbf{A}\mathbf{V}-\mathbf{B},\tag{5}
-$$
+
+$$\nabla f(\mathbf{V})=\mathbf{A}\mathbf{V}-\mathbf{B},\tag{5}$$
+
 where $\mathbf{A}=\sum_ {k=1}^K{\mu_ k\lvert\beta_ k\rvert^2\mathbf{h}_ k\mathbf{h}_ k^\mathrm{H}}$, and $\mathbf{B}=[\mathbf{b}_ 1,\cdots,\mathbf{b}_ k,\cdots,\mathbf{b}_ K]$ with $\mathbf{b}_ k=\mu_ k\beta_ k\mathbf{h}_ k$. Applying PGD to (4), at the $t$-th iteration, we have the following updating formula:
-$$
-\mathbf{V}^{t+1}=\Pi_ {\mathcal{C}}\left(\mathbf{V}^t-\gamma\left[\mathbf{A}\mathbf{V}^t-\mathbf{B}\right]\right),\tag{6}
-$$
+
+$$\mathbf{V}^{t+1}=\Pi_ {\mathcal{C}}\left(\mathbf{V}^t-\gamma\left[\mathbf{A}\mathbf{V}^t-\mathbf{B}\right]\right),\tag{6}$$
+
 where $\Pi_ \mathcal{C}(\mathbf{V})=\frac{\sqrt{P}\mathbf{V}}{\mathrm{ReLU}(\lVert\mathbf{V})\rVert-\sqrt{P})+\sqrt{P}}$ denotes the projected operator. The intuition is that (6) can be interpreted as a a network layer, in which $\mathbf{A}$ refers to the 'weights', $\mathbf{B}$ refers to  the 'bias', and the projected operator $\Pi_ {\mathcal{C}}$ represents the 'nonlinear activation function'. As a result, the PGD algorithm applied to the WSRMax problem can be implemented using a deep network, as illustrated in Fig. 1.
 
 ![unrolled PGD for WSRmax precoding](/Unrolled_PGD_WSRmax.png)
