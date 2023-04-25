@@ -4,7 +4,7 @@ This GitHub repository hosts the Python code of a deep-unfolding algorithm for w
 
 ## Problem formulation
 
-Consider a downlink multiuser MIMO syste, where a base station equipped with $N$ antennas serves $K$ single-antenna users. Let $s_ k$ be the data symbol intended to user $k$ and let $\mathbf{h}_ k\in\mathbb{C}^{N\times 1}$ be the channel between the base station and user $k$. With linear precoding, the $N\times 1$ transmitted signal vector is
+Consider a downlink multiuser MIMO system, where a base station equipped with $N$ antennas serves $K$ single-antenna users. Let $s_ k$ be the data symbol intended to user $k$ and let $\mathbf{h}_ k\in\mathbb{C}^{N\times 1}$ be the channel between the base station and user $k$. With linear precoding, the $N\times 1$ transmitted signal vector is
 
 $$\mathbf{x}=\mathbf{V}\mathbf{s}=\sum_ {k=1}^{K}{\mathbf{v}_ ks_ k},\tag{1}$$
 
