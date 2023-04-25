@@ -20,7 +20,7 @@ We seek to maximize the weighted sum rate (WSR) subject to a total transmit powe
 
 $$\max_ {\mathbf{V}}\quad f(\mathbf{V})=\sum_ {k=1}^{K}\alpha_ k\log_ 2(1+\mathrm{SINR}_ k),\qquad\mathrm{s.t.}\quad\mathrm{tr}(\mathbf{V}\mathbf{V}^\mathrm{H})\leq P,\tag{4}$$
 
-where $\alpha_ k$ indicates the user priority and <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{100}&space;\small&space;P" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\dpi{100}&space;\small&space;P" title="\small P" /></a> is the maximum transmit power at the base station. 
+where $\alpha_ k$ indicates the user priority and $P$ is the maximum transmit power at the base station. 
 
 The WSRMax problem (4) is known to be NP-hard. Currently,  the iterative weighted minimum mean square error (WMMSE) algorithm developed in [[1]](#WMMSE_Shi)  is the most popular method to handle this problem, which is guaranteed to find a stationary solution. The iterative progress can be summarized as follows:
 
