@@ -42,7 +42,7 @@ Specifically, the WSR objective has a gradient with respect to $\mathbf{V}$ as
 
 $$\nabla f(\mathbf{V})=\mathbf{A}\mathbf{V}-\mathbf{B},\tag{5}$$
 
-where $\mathbf{A}=\sum_ {k=1}^K{\mu_ k\lvert\beta_ k\rvert^2\mathbf{h}_ k\mathbf{h}_ k^\mathrm{H}}$, and $\mathbf{B}=[\mathbf{b}_ 1,\cdots,\mathbf{b}_ k,\cdots,\mathbf{b}_ K]$ with $\mathbf{b}_ k=\mu_ k\beta_ k\mathbf{h}_ k$. Applying PGD to (4), at the $t$-th iteration, we have the following updating formula:
+where $\mathbf{A}=\sum_{k=1}^{K}{\mu_ k\lvert\beta_ k\rvert^2\mathbf{h}_ k\mathbf{h}_ k^\mathrm{H}}$, and $\mathbf{B}=[\mathbf{b}_ 1,\cdots,\mathbf{b}_ k,\cdots,\mathbf{b}_ K]$ with $\mathbf{b}_ k=\mu_ k\beta_ k\mathbf{h}_ k$. Applying PGD to (4), at the $t$-th iteration, we have the following updating formula:
 
 $$\mathbf{V}^{t+1}=\Pi_ {\mathcal{C}}\left(\mathbf{V}^t-\gamma\left[\mathbf{A}\mathbf{V}^t-\mathbf{B}\right]\right),\tag{6}$$
 
@@ -59,10 +59,8 @@ In this way, the iterative parameter $\{\beta_ k\}_ {k=1}^{K}$ and $\{\mu_ k\}_ 
 In this repository, the user can find:
 
 - `run_unrolled_PGD_WSRMax.py`, which implements the proposed deep unrolled PGD in Python 3.6.13 and Tensorflow 1.15.0.
-- `wmmse\_algorithm.py`, which implements the WMMSE in [[1]](#ourpaper)  in Python 3.6.13.
-- The implementation in Python 3 of the zero forcing (ZF) solution
-- The implementation in Python 3 of the regularized zero-forcing (RZF) solution
-- `utility\_functions.py`, which includes subroutines that will be needed in `run\_unrolled\_PGD\_WSRMax.py` and `wmmse\_algorithm.py`. It also provides the implementation in Python 3 of the zero forcing (ZF) solution and regularized zero-forcing (RZF) solution to (5).
+- `wmmse_algorithm.py`, which implements the WMMSE in [[1]](#ourpaper)  in Python 3.6.13.
+- `utility_functions.py`, which includes subroutines that will be needed in `run_unrolled_PGD_WSRMax.py` and `wmmse_algorithm.py`. It also provides the implementation in Python 3 of the zero forcing (ZF) solution and regularized zero-forcing (RZF) solution to (5).
 
 Note that the training time can vary from an hour to many hours, depending on the parameter settings, e.g., the number of iterations and the number of PGD steps, and on the user hardware. 
 
