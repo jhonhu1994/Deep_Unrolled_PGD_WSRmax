@@ -24,7 +24,7 @@ where $\alpha_ k$ indicates the user priority and $P$ is the maximum transmit po
 
 The WSRMax problem (4) is known to be NP-hard. Currently,  the iterative weighted minimum mean square error (WMMSE) algorithm developed in [[1]](#WMMSE_Shi)  is the most popular method to handle this problem, which is guaranteed to find a stationary solution. The iterative progress can be summarized as follows:
 
-1. Update the receivers:  $\beta_ k\leftarrow\frac{\mathbf{h}_ k^\mathrm{H}\mathbf{v}_ k}{\mathbf{h}_ k^\mathrm{H}(\sum_ {j=1}^K\mathbf{w}_ j\mathbf{w}_ j^\mathrm{H})\mathbf{h}_ k+\sigma_ \mathrm{n}^2},\\;\forall k$.
+1. Update the receivers:  $\beta_ k\leftarrow\frac{\mathbf{h}_ k^\mathrm{H}\mathbf{v}_ k}{\mathbf{h}_ k^\mathrm{H}(\sum_ {j}\mathbf{w}_ j\mathbf{w}_ j^\mathrm{H})\mathbf{h}_ k+\sigma_ \mathrm{n}^2},\\;\forall k$.
 
 2. Update the MSE weights:  $\mu_ k\leftarrow\frac{\mathbf{h}_ k^\mathrm{H}(\sum_ {j}\mathbf{w}_ j\mathbf{w}_ j^\mathrm{H})\mathbf{h}_ k+\sigma_ \mathrm{n}^2}{\mathbf{h}_ k^\mathrm{H}(\sum_ {j\neq k}\mathbf{w}_ j\mathbf{w}_ j^\mathrm{H})\mathbf{h}_ k+\sigma_ \mathrm{n}^2},\\;\forall k$.
 
