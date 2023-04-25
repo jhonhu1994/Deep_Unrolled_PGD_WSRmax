@@ -8,7 +8,7 @@ Consider a downlink multiuser MIMO system, where a base station equipped with $N
 
 $$\mathbf{x}=\mathbf{V}\mathbf{s}=\sum_ {k=1}^{K}{\mathbf{v}_ ks_ k},\tag{1}$$
 
-where $\mathbf{s}=[s_ 1,\cdots,s_ k,\cdots,s_ K]^\mathrm{T}$, and $\mathbf{V}=[\mathbf{v}_ 1,\cdots,\mathbf{v}_ k,\cdots,\mathbf{v}_ K]$ with $\mathbf{v}_ k$ being  the precoding vector for user $k$. Symbols are assumed to be zero-mean and uncorrelated across users so that $\mathbb{E}\{\mathbf{s}\mathbf{s}^\mathrm{H}\}=\mathbf{I}_ K$. The received signal at user $k$ is
+where $\mathbf{s}=[s_ 1,\cdots,s_ k,\cdots,s_ K]^\mathrm{T}$, and $\mathbf{V}=[\mathbf{v}_ 1,\cdots,\mathbf{v}_ k,\cdots,\mathbf{v}_ K]$ with $\mathbf{v}_ k$ being  the precoding vector for user $k$. Symbols are assumed to be zero-mean and uncorrelated across users so that $\mathbb{E}\\{\mathbf{s}\mathbf{s}^\mathrm{H}\\}=\mathbf{I}_ K$. The received signal at user $k$ is
 
 $$y_ k=\mathbf{h}_ k^\mathrm{H}\mathbf{v}_ ks_ k + \sum_ {j\neq k}\mathbf{h}_ k\mathbf{v}_ js_ j + n_ k,\tag{2}$$
 
