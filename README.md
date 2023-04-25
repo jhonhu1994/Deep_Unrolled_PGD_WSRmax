@@ -42,7 +42,7 @@ Specifically, the WSR objective has a gradient with respect to $\mathbf{V}$ as
 
 $$\nabla f(\mathbf{V})=\mathbf{A}\mathbf{V}-\mathbf{B},\tag{5}$$
 
-where $\mathbf{A}=\sum_{k=1}^{K}{\mu_ k\lvert\beta_ k\rvert^2\mathbf{h}_ k\mathbf{h}_ k^\mathrm{H}}$, and $\mathbf{B}=[\mathbf{b}_ 1,\cdots,\mathbf{b}_ k,\cdots,\mathbf{b}_ K]$ with $\mathbf{b}_ k=\mu_ k\beta_ k\mathbf{h}_ k$. Applying PGD to (4), at the $t$-th iteration, we have the following updating formula:
+where $\mathbf{A}=\sum_{k}{\mu_ k\lvert\beta_ k\rvert^2\mathbf{h}_ k\mathbf{h}_ k^\mathrm{H}}$, and $\mathbf{B}=[\mathbf{b}_ 1,\cdots,\mathbf{b}_ k,\cdots,\mathbf{b}_ K]$ with $\mathbf{b}_ k=\mu_ k\beta_ k\mathbf{h}_ k$. Applying PGD to (4), at the $t$-th iteration, we have the following updating formula:
 
 $$\mathbf{V}^{t+1}=\Pi_ {\mathcal{C}}\left(\mathbf{V}^t-\gamma\left[\mathbf{A}\mathbf{V}^t-\mathbf{B}\right]\right),\tag{6}$$
 
@@ -52,7 +52,7 @@ where $\Pi_ \mathcal{C}(\mathbf{V})=\frac{\sqrt{P}\mathbf{V}}{\mathrm{ReLU}(\lVe
 
 <center><p><font size="3"><em>Fig 1. Deep Unrolled PGD based WSRMax precoding</em></font><br/></p></center>
 
-In this way, the iterative parameter $\{\beta_ k\}_ {k=1}^{K}$ and $\{\mu_ k\}_ {k=1}^K$ can be treated as learnable structures and their values can be learned from data instead of hand-tuning.
+In this way, the iterative parameter $\\{\beta_ k\\}_ {k=1}^{K}$ and $\\{\mu_ k\\}_ {k=1}^K$ can be treated as learnable structures and their values can be learned from data instead of hand-tuning.
 
 ## Usage
 
