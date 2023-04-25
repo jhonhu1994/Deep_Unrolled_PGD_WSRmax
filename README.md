@@ -26,13 +26,13 @@ The WSRMax problem (4) is known to be NP-hard. Currently,  the iterative weighte
 
 1. Update the receivers:  $\beta_ k\leftarrow\frac{\mathbf{h}_ k^\mathrm{H}\mathbf{v}_ k}{\mathbf{h}_ k^\mathrm{H}(\sum_ {j=1}^K\mathbf{w}_ j\mathbf{w}_ j^\mathrm{H})\mathbf{h}_ k+\sigma_ \mathrm{n}^2},\\;\forall k$.
 
-2. Update the MSE weights:  $\mu_ k\leftarrow\frac{\mathbf{h}_ k^\mathrm{H}(\sum_ {j=1}^K\mathbf{w}_ j\mathbf{w}_ j^\mathrm{H})\mathbf{h}_ k+\sigma_ \mathrm{n}^2}{\mathbf{h}_ k^\mathrm{H}(\sum_ {j\neq k}\mathbf{w}_ j\mathbf{w}_ j^\mathrm{H})\mathbf{h}_ k+\sigma_ \mathrm{n}^2},\\;\forall k$.
+2. Update the MSE weights:  $\mu_ k\leftarrow\frac{\mathbf{h}_ k^\mathrm{H}(\sum_ {j}\mathbf{w}_ j\mathbf{w}_ j^\mathrm{H})\mathbf{h}_ k+\sigma_ \mathrm{n}^2}{\mathbf{h}_ k^\mathrm{H}(\sum_ {j\neq k}\mathbf{w}_ j\mathbf{w}_ j^\mathrm{H})\mathbf{h}_ k+\sigma_ \mathrm{n}^2},\\;\forall k$.
 
 3. Update the precoding matrix:
 
    $$\mathbf{V}\leftarrow\arg\min_ {\mathbf{V}}\\;\mathrm{tr}(\mathbf{V}^\mathrm{H}\mathbf{A}\mathbf{V}-\mathbf{V}^\mathrm{H}\mathbf{B}-\mathbf{B}^\mathrm{H}\mathbf{V}),\quad\mathrm{s.t.}\\;\mathrm{tr}(\mathbf{V}\mathbf{V}^\mathrm{H})\leq P,\tag{5}$$
    
-   where $\mathbf{A}=\sum_ {k=1}^K{\mu_ k\lvert\beta_ k\rvert^2\mathbf{h}_ k\mathbf{h}_ k^\mathrm{H}}$, and $\mathbf{B}=[\mathbf{b}_ 1,\cdots,\mathbf{b}_ k,\cdots,\mathbf{b}_ K]$ with $\mathbf{b}_ k=\mu_ k\beta_ k\mathbf{h}_ k$. Problem (5) is a convex quadratically constrained quadratic programming (QCQP) problem and thus can be easily solved (e.g., by using Lagrange dual method).
+   where $\mathbf{A}=\sum_ {k=1}{\mu_ k\lvert\beta_ k\rvert^2\mathbf{h}_ k\mathbf{h}_ k^\mathrm{H}}$, and $\mathbf{B}=[\mathbf{b}_ 1,\cdots,\mathbf{b}_ k,\cdots,\mathbf{b}_ K]$ with $\mathbf{b}_ k=\mu_ k\beta_ k\mathbf{h}_ k$. Problem (5) is a convex quadratically constrained quadratic programming (QCQP) problem and thus can be easily solved (e.g., by using Lagrange dual method).
 
 ## Proposed Algorithm
 
